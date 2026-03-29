@@ -58,6 +58,6 @@ demo = gr.ChatInterface(
 
 if __name__ == "__main__":
     # Launch the Gradio app
-    # For local execution, this will run on http://127.0.0.1:7860
-    # On Hugging Face Spaces, it will automatically serve the app.
-    demo.launch()
+    # For local execution and Hugging Face Spaces, binding to 0.0.0.0 is necessary 
+    # for external accessibility and to pass container health checks.
+    demo.launch(server_name="0.0.0.0", server_port=7860)
